@@ -2,8 +2,8 @@ import 'package:fitness_app_with_getx/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class ForgetPasswordView extends StatelessWidget {
+  const ForgetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
                   height: Get.height * 0.55,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage('assets/images/black/12.jpg'),
+                    image: AssetImage('assets/images/black/14.jpg'),
                     fit: BoxFit.cover,
                   )),
                 ),
@@ -62,7 +62,7 @@ class LoginView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Sign In',
+                              'Forget Password',
                               style: TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.bold,
@@ -91,28 +91,7 @@ class LoginView extends StatelessWidget {
                       style: TextStyle(color: Colors.grey, fontSize: 20),
                     ),
                     TextFormField(),
-                    SizedBox(height: 20),
-                    Text(
-                      'Password',
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                    ),
-                    SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Get.toNamed(Routes.FORGOT_PASSWORD);
-                        },
-                        child: Text(
-                          'Forgot your password?',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 40),
                     Align(
                       alignment: Alignment.center,
                       child: ElevatedButton(
@@ -124,14 +103,16 @@ class LoginView extends StatelessWidget {
                             shape: MaterialStatePropertyAll(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.back();
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 10),
                           width: Get.width * 0.7,
                           height: 50,
                           alignment: Alignment.center,
                           child: Text(
-                            'Login',
+                            'Submit',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),
@@ -152,7 +133,7 @@ class LoginView extends StatelessWidget {
                               side: BorderSide(color: kFirstColor),
                             ))),
                         onPressed: () {
-                          Get.toNamed(Routes.SIGNUP);
+                          Get.back();
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 10),
@@ -160,7 +141,7 @@ class LoginView extends StatelessWidget {
                           height: 50,
                           alignment: Alignment.center,
                           child: Text(
-                            'Sign Up',
+                            'Cancel',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),

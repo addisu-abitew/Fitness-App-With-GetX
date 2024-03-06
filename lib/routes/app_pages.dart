@@ -1,4 +1,6 @@
 // ignore_for_file: constant_identifier_names
+import 'package:fitness_app_with_getx/pages/forgot_password_view.dart';
+import 'package:fitness_app_with_getx/pages/signup_view.dart';
 import 'package:get/get.dart';
 import '../core.dart';
 
@@ -19,6 +21,14 @@ class AppPages {
     GetPage(
       name: Routes.LOGIN,
       page: () => const LoginView(),
+    ),
+    GetPage(
+      name: Routes.SIGNUP,
+      page: () => const SignUpView(),
+    ),
+    GetPage(
+      name: Routes.FORGOT_PASSWORD,
+      page: () => const ForgetPasswordView(),
     ),
   ];
 }

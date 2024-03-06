@@ -2,8 +2,8 @@ import 'package:fitness_app_with_getx/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
                   height: Get.height * 0.55,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage('assets/images/black/12.jpg'),
+                    image: AssetImage('assets/images/black/4.jpg'),
                     fit: BoxFit.cover,
                   )),
                 ),
@@ -62,7 +62,7 @@ class LoginView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Sign In',
+                              'Sign Up',
                               style: TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.bold,
@@ -87,11 +87,23 @@ class LoginView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+                      'Name',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                    TextFormField(),
+                    SizedBox(height: 15),
+                    Text(
                       'Email',
                       style: TextStyle(color: Colors.grey, fontSize: 20),
                     ),
                     TextFormField(),
-                    SizedBox(height: 20),
+                    SizedBox(height: 15),
+                    Text(
+                      'Phone',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                    TextFormField(),
+                    SizedBox(height: 15),
                     Text(
                       'Password',
                       style: TextStyle(color: Colors.grey, fontSize: 20),
@@ -99,20 +111,23 @@ class LoginView extends StatelessWidget {
                     TextFormField(
                       obscureText: true,
                     ),
-                    SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Get.toNamed(Routes.FORGOT_PASSWORD);
-                        },
-                        child: Text(
-                          'Forgot your password?',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
+                    SizedBox(height: 15),
+                    Text(
+                      'Confirm Password',
+                      style: TextStyle(color: Colors.grey, fontSize: 20),
+                    ),
+                    TextFormField(
+                      obscureText: true,
                     ),
                     SizedBox(height: 20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'By signing up, I agree to the aqua workout User \nAgreement and Privacy Policy.',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(height: 30),
                     Align(
                       alignment: Alignment.center,
                       child: ElevatedButton(
@@ -131,7 +146,7 @@ class LoginView extends StatelessWidget {
                           height: 50,
                           alignment: Alignment.center,
                           child: Text(
-                            'Login',
+                            'Register',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),
@@ -152,7 +167,7 @@ class LoginView extends StatelessWidget {
                               side: BorderSide(color: kFirstColor),
                             ))),
                         onPressed: () {
-                          Get.toNamed(Routes.SIGNUP);
+                          Get.back();
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 10),
@@ -160,7 +175,7 @@ class LoginView extends StatelessWidget {
                           height: 50,
                           alignment: Alignment.center,
                           child: Text(
-                            'Sign Up',
+                            'Cancel',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),
